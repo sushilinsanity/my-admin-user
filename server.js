@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 });
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(express.static(path.join(__dirname, 'client/dist/client')));
 
 //Use Routes
 app.use('/user', UserRoutes);
