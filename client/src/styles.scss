@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./styles/primeng";
+@import './styles/variables';
+
+// reset
+*,
+** {
+  margin: 0;
+  padding: 0;
+}
+
+// navbar
+.navbar {
+  background-color: $color-primary;
+  color: $color-white;
+
+  .info-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    .option-admin-area {
+      cursor: pointer;
+    }
+    
+    .user-icon {
+      cursor: pointer;
+      margin-left: $size-2x;
+    }
+  }
+}
+
+.fa
+
+// form control
+.invalid-control {
+  border-color: darken($color-red, 10%);
+}
+
+.invalid-msg {
+  font-size: $font-size-small-x;
+  color: darken($color-red, 10%);
+}
+
+// card
+.card-wrapper {
+  border: 1px solid;
+  padding: $size-1x;
+  border-color: $color-light-grey;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0px $color-light-grey;
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__body {
+    font-size: $font-size-small-x;
+  }
+
+  &__action {
+    text-align: right;
+    margin-top: .5rem;
+  }
+}
+
+.info-icon {
+  color: darken($color-light-grey, 20%);
+  vertical-align: sub;
+  margin-left: .5rem;
+}
+
+// button
+.btn-wrapper {
+  display: flex;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $color-white;
+  
+  &:hover, &:focus {
+    background-color: darken($color-primary, 5%);
+    border-color: darken($color-primary, 5%);
+    color: $color-white;
+  }
+}
+
+.btn-save {
+  margin-left: .5rem;
+  height: 1.5rem;
+  line-height: $size-1x;
+  padding: .1rem .5rem;
+  font-size: $font-size-small;
+}
+
+// listgroup
+.list-group-item {
+  .label-header {
+    font-size: $font-size-small-x;
+    margin-right: .5rem;
+  }
+
+  .label-text {
+    font-weight: 500;
+  }
+}
+
+.dashboard-button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  
+  .btn {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+}

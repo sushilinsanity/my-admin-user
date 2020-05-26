@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-sm-4 px-3 my-3" *ngFor="let section of sections">
+    <div class="card-wrapper">
+      <div class="card-wrapper__title">{{section.title}}</div>
+      <div class="card-wrapper__body">{{section.body}}</div>
+      <div class="card-wrapper__action" *ngIf="userData?.isAdmin">
+        <button class="btn btn-sm btn-secondary" (click)="goToSection(section.url)">Launch</button>
+      </div>
+      <div class="card-wrapper__action" *ngIf="!userData?.isAdmin">
+        <button class="btn btn-sm btn-secondary" (click)="goToSection(section.url)"
+          [disabled]="!section.hasAccess">Launch</button>
+        <fa-icon *ngIf="!section.hasAccess" class="info-icon" [icon]="faQuestion"
+          pTooltip="required permission not available"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

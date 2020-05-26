@@ -1,0 +1,36 @@
+<form [formGroup]="registerForm">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" placeholder="Enter username..." formControlName="username"
+      [ngClass]="{'invalid-control': registerForm.get('username')?.touched && registerForm.get('username')?.invalid}">
+    <span *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="invalid-msg">
+      Username is required
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="Enter email..." formControlName="email"
+      [ngClass]="{'invalid-control': registerForm.get('email')?.touched && registerForm.get('email')?.invalid}">
+    <span *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="invalid-msg">
+      Valid email address is required</span>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" placeholder="Enter password..." formControlName="password"
+      [ngClass]="{'invalid-control': registerForm.get('password')?.touched && registerForm.get('password')?.invalid}">
+    <span *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="invalid-msg">
+      Password must be atleast 5 characters long</span>
+  </div>
+  <div class="btn-wrapper">
+    <div class="col-sm-8 px-0">
+      <button type="button" class="btn btn-primary" [disabled]="!registerForm.valid" (click)="onRegister()">Register</button>
+      <button type="button" class="btn btn-secondary ml-2" (click)="clearForm()">Cancel</button>
+    </div>
+    <div class="col-sm-4 px-0 text-right">
+      <button type="button" class="btn btn-secondary" (click)="goToLogin()">Login</button>
+    </div>
+  </div>
+</form>
+<div *ngIf="showError" class="alert alert-danger mt-3" role="alert">
+  {{errorMessage}}
+</div>

@@ -1,0 +1,14 @@
+<nav class="navbar px-4">
+  <div class="col-sm-6">
+    <a class="navbar-brand">My Admin User</a>
+  </div>
+  <div class="col-sm-6 info-wrapper">
+    <div *ngIf="userData?.name && userData?.isAdmin" class="option-admin-area" (click)="navigateToAdminPage()">Admin
+      Area</div>
+    <fa-icon *ngIf="userData?.name && userData?.isAdmin" class="user-icon" [icon]="faUserShield"
+      pTooltip="{{userData?.name}}"></fa-icon>
+    <fa-icon *ngIf="userData?.name && !userData?.isAdmin" class="user-icon" [icon]="faUser"
+      pTooltip="{{userData?.name}}"></fa-icon>
+    <fa-icon *ngIf="userData?.name" class="user-icon" [icon]="faSignOutAlt" pTooltip="Logout" (click)="onSignOut()"></fa-icon>
+  </div>
+</nav>

@@ -1,0 +1,9 @@
+<div class="container mt-3">
+  <div class="col-sm-6 offset-sm-3">
+    <div class="text-center mb-5">
+      <h4>Login/Register to continue</h4>
+    </div>
+    <app-login *ngIf="loginRegister === 'login'"></app-login>
+    <app-register *ngIf="loginRegister === 'register'"></app-register>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/nova-light/theme.css";
+@import "~primeng/resources/primeng.min.css";
+
+@import "./variables";
+
+// message toast
+.ui-messages-close {
+  >.pi {
+    font-size: $font-size-small-x;
+  }
+}
+
+.ui-toast-message-content {
+  >.pi.pi-times {
+    font-size: $font-size-small-x;
+  }
+}
+
+// multiselct
+.list-group {
+  .ui-multiselect-label {
+    height: 20px;
+    min-width: 100px;
+    padding: .2rem !important;
+    font-size: .75rem;
+    line-height: $size-1x;
+  }
+  
+  .ui-multiselect-header {
+    min-width: 150px;
+  }
+  
+  .ui-multiselect-trigger {
+    font-size: .75rem;
+    width: $size-1x;
+  }
+  
+  .ui-multiselect-filter-container {
+    input {
+      height: 20px;
+    }
+  
+    .ui-multiselect-filter-icon {
+      font-size: .75rem;
+      line-height: .75rem;
+    }
+  
+  }
+  
+  .ui-multiselect-close {
+    .pi.pi-times {
+      font-size: $font-size-small-x;
+    }
+  }
+
+  .ui-multiselect-item {
+    margin-bottom: 1px !important;
+  }
+}
+
+// checkbox
+.ui-chkbox-box {
+  width: $size-1x !important;
+  height: $size-1x !important;
+
+  .ui-chkbox-icon {
+    font-size: $font-size-small-x !important;
+  }
+}
+
+// progress spinner
+.ui-progress-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  width: 50px;
+}

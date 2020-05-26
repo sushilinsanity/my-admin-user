@@ -1,0 +1,26 @@
+<div class="col-sm-6 offset-sm-3">
+  <h6 class="mt-4">List of registered users</h6>
+  <div>
+    <div class="list-group" *ngIf="users?.length">
+      <div class="list-group-item d-flex" *ngFor="let user of users">
+        <div class="col-sm-6">
+          <div><span class="label-header">Username:</span><span class="label-text">{{user.name}}</span></div>
+          <div><span class="label-header">Email:</span><span class="label-text">{{user.email}}</span></div>
+        </div>
+        <div class="col-sm-6" *ngIf="user?.isAdmin"><span class="label-text">User is an Admin</span></div>
+        <div class="col-sm-6" *ngIf="!user?.isAdmin">
+          <div>
+            <span class="label-header">Active Roles:</span><span class="label-text">{{user?.roles}}</span>
+          </div>
+          <span class="label-header">Available Roles:</span><span>
+            <p-multiSelect [options]="rolesData" [(ngModel)]="user.activeRoles" optionLabel="value"></p-multiSelect>
+            <button class="btn btn-sm btn-save btn-primary" pTooltip="Save user roles" (click)="saveUserRoles(user)">Save</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dashboard-button">
+  <button class="btn bnt-sm btn-primary" pTooltip="Go to dashboard" (click)="navigateToDashboard()"><fa-icon [icon]="faChevronLeft"></fa-icon></button>
+</div>
