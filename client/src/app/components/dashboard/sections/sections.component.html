@@ -9,8 +9,8 @@
       <div class="card-wrapper__action" *ngIf="!userData?.isAdmin">
         <button class="btn btn-sm btn-secondary" (click)="goToSection(section.url)"
           [disabled]="!section.hasAccess">Launch</button>
-        <fa-icon *ngIf="!section.hasAccess" class="info-icon" [icon]="faQuestion"
-          pTooltip="required permission not available"></fa-icon>
+        <!-- <fa-icon *ngIf="!section.hasAccess" class="info-icon" [icon]="faQuestion"
+          pTooltip="required permission not available"></fa-icon> -->
       </div>
     </div>
   </div>
