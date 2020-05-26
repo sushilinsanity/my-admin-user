@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 
-// importing routes
-// const AdminRoutes = require('./routes/admin');
 const UserRoutes = require('./routes/users');
 
 // config
@@ -22,14 +20,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
   next();
 });
 
+// Set Static Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 //Use Routes
 app.use('/user', UserRoutes);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 //port configurations
 const PORT = process.env.PORT | 8080;
