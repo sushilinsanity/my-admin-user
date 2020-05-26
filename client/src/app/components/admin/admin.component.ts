@@ -48,8 +48,9 @@ export class AdminComponent implements OnInit {
     let payload = { id: user._id, roles: [] };
     const roles = [];
     user.activeRoles.forEach(role => {
+      if (role && role.value)
       roles.push(role.value);
-    })
+    });
     payload.roles = roles;
 
     this._apiHelper.isLoading.next(true);
