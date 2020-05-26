@@ -9,6 +9,8 @@
     "mongoose": "^5.9.15"
   },
   "scripts": {
+    "install": "cd client && npm install",
+    "build": "cd client && ng build",
     "start": "node server"
   },
   "keywords": [],
