@@ -28,13 +28,13 @@ app.use((req, res, next) => {
 });
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 //Use Routes
 app.use('/user', UserRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/dist/client'));
+  res.sendFile(path.join(__dirname, 'client/dist/client/index.html'));
 });
 
 //port configurations
