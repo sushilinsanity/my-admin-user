@@ -10,7 +10,7 @@
   },
   "scripts": {
     "install": "cd client && npm install",
-    "build": "cd client && ng build",
+    "build": "cd client && npm run build",
     "start": "node server"
   },
   "keywords": [],
