@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-      username: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')])),
       password: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]))
     })

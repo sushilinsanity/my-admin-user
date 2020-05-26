@@ -1,9 +1,9 @@
 <form [formGroup]="registerForm">
   <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" class="form-control" placeholder="Enter username..." formControlName="username"
-      [ngClass]="{'invalid-control': registerForm.get('username')?.touched && registerForm.get('username')?.invalid}">
-    <span *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="invalid-msg">
+    <label for="name">Username</label>
+    <input type="text" class="form-control" placeholder="Enter username..." formControlName="name"
+      [ngClass]="{'invalid-control': registerForm.get('name')?.touched && registerForm.get('name')?.invalid}">
+    <span *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid" class="invalid-msg">
       Username is required
     </span>
   </div>
